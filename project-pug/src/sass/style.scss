@@ -1,0 +1,11 @@
+@import "variable";
+.hello {
+    color: $mainColor;
+    text-align: center;
+    &__pug {
+        color: burlywood;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "VNFGotham"; /* Tên font chữ tùy ý */
+  src: url("./src/assets/fonts/VNF-Gotham Book.ttf") format("truetype"); /* Đường dẫn đến file .ttf */
+  /* Các kiểu font chữ khác có thể được khai báo tại đây nếu cần (eot, woff, woff2) */
+}
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "VNFGotham", Helvetica, Arial, sans-serif; /* Sử dụng font chữ đã import */
+}
+
+button {
+  cursor: pointer;
+}

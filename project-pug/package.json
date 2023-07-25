@@ -1,0 +1,22 @@
+{
+  "name": "project-pug",
+  "version": "1.0.0",
+  "description": "project using pug, sass, gulp, bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "walter1912",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.64.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "gulp-concat": "^2.6.1"
+  }
+}

@@ -1,0 +1,10 @@
+.hello {
+  color: #a5190e;
+  text-align: center;
+}
+.hello__pug {
+  color: burlywood;
+}
+.hello__pug:hover {
+  text-decoration: underline;
+}

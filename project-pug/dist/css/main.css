@@ -4,11 +4,15 @@
   src: url("./src/assets/fonts/VNF-Gotham Book.ttf") format("truetype"); /* Đường dẫn đến file .ttf */
   /* Các kiểu font chữ khác có thể được khai báo tại đây nếu cần (eot, woff, woff2) */
 }
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
-body, a, button {
+body,
+a,
+button {
   font-family: "VNFGotham", Helvetica, Arial, sans-serif; /* Sử dụng font chữ đã import */
 }
 
@@ -33,4 +37,46 @@ a {
 .hover--under-main:hover {
   text-decoration-line: underline;
   text-decoration-color: #a5190e;
+}
+
+.btn__main {
+  border: 2px solid #a5190e;
+  border-radius: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  background: none;
+}
+.btn__main:hover {
+  border: 2px double #b2910e; /* Border thứ nhất */
+  background-color: #a5190e;
+  color: #fff;
+}
+
+.btn--s {
+  min-width: 132px;
+}
+
+.btn--l {
+  min-width: 352px;
+}
+
+.live-fully {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+.live-fully h2 {
+  color: #b2910e;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.live-fully p {
+  color: #252525;
+  font-size: 1.3rem;
 }

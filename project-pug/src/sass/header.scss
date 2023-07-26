@@ -27,14 +27,14 @@ $navHeight: 116px;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  height: $navHeight;
   &__nav {
     padding-left: 40px;
     padding-right: 40px;
     width: 100%;
     display: flex;
     white-space: nowrap;
-    height: 116px;
+    height: $navHeight;
+
 
     & .logo {
       position: relative;
@@ -65,11 +65,14 @@ $navHeight: 116px;
       width: 100%;
       position: relative;
 
-      &:hover .dropdown {
-        display: block;
-      }
-      &:hover .places__dropdown.dropdown {
-        display: flex;
+      &:hover {
+        .live-fully__dropdown,
+        .language__dropdown {
+          display: block;
+        }
+        .places__dropdown {
+          display: flex;
+        }
       }
     }
   }
@@ -97,7 +100,7 @@ $navHeight: 116px;
     padding: 0;
     .live-fully__item {
       text-transform: capitalize;
-      padding: 8px 0 8px 21px;
+      padding: 8px 0 8px 10px;
       & a {
         color: $textColor;
         text-decoration: none;
@@ -215,7 +218,7 @@ $navHeight: 116px;
         top: -10px;
         width: 156px;
         height: 104px;
-        transition: all .8s ease;
+        transition: all 0.8s ease;
         &:hover {
           background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-north-active.png)
             50% no-repeat;
@@ -239,7 +242,7 @@ $navHeight: 116px;
         top: 264px;
         width: 115px;
         height: 109px;
-        transition: all .8s ease;
+        transition: all 0.8s ease;
         &:hover {
           background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-south-active.png)
             50% no-repeat;
@@ -262,6 +265,46 @@ $navHeight: 116px;
         margin-bottom: 30px;
         margin-left: 92%;
       }
+    }
+  }
+  .search__dropdown.dropdown {
+    right: 0;
+    width: 320px;
+    height: 60px;
+    border-bottom: none;
+    form {
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+    }
+    #searchHeader {
+      line-height: 40px;
+      width: calc(100% - 100px);
+      border: none;
+      outline: none;
+      padding-left: 10px;
+      text-transform: capitalize;
+    }
+    .search__btn {
+      width: 100px;
+      border: none;
+      border-bottom: 4px solid $mainColor;
+      line-height: 40px;
+      background-color: $yellow--second;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      letter-spacing: 0.4px;
+      font-weight: 400;
+      color: $mainColor;
+    }
+  }
+  .language__dropdown {
+    left: 0;
+    right: 0;
+    .item {
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   }
   .video-intro {

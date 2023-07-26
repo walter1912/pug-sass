@@ -24,7 +24,6 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  height: 116px;
 }
 .header__nav {
   padding-left: 40px;
@@ -61,10 +60,11 @@
   width: 100%;
   position: relative;
 }
-.header__nav div.header__nav__item:hover .dropdown {
+.header__nav div.header__nav__item:hover .live-fully__dropdown,
+.header__nav div.header__nav__item:hover .language__dropdown {
   display: block;
 }
-.header__nav div.header__nav__item:hover .places__dropdown.dropdown {
+.header__nav div.header__nav__item:hover .places__dropdown {
   display: flex;
 }
 .header .button--dropdown {
@@ -91,7 +91,7 @@
 }
 .header .live-fully__list .live-fully__item {
   text-transform: capitalize;
-  padding: 8px 0 8px 21px;
+  padding: 8px 0 8px 10px;
 }
 .header .live-fully__list .live-fully__item a {
   color: #252525;
@@ -243,6 +243,46 @@
 .header .places__dropdown.dropdown .place__regions__maps .map__south .des-location {
   margin-bottom: 30px;
   margin-left: 92%;
+}
+.header .search__dropdown.dropdown {
+  right: 0;
+  width: 320px;
+  height: 60px;
+  border-bottom: none;
+}
+.header .search__dropdown.dropdown form {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.header .search__dropdown.dropdown #searchHeader {
+  line-height: 40px;
+  width: calc(100% - 100px);
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  text-transform: capitalize;
+}
+.header .search__dropdown.dropdown .search__btn {
+  width: 100px;
+  border: none;
+  border-bottom: 4px solid #a5190e;
+  line-height: 40px;
+  background-color: #f7bd01;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+  color: #a5190e;
+}
+.header .language__dropdown {
+  left: 0;
+  right: 0;
+}
+.header .language__dropdown .item {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .header .video-intro {
   margin-top: -20px;

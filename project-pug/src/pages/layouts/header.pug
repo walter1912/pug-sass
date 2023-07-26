@@ -107,15 +107,19 @@ header.header
             span Green travel 
         button.header__nav__item 
             span Travel offers 
-        button.header__nav__item 
-            span EN 
-            i.fa-solid.fa-chevron-down
+        div.header__nav__item 
+            button.button--dropdown
+                span EN 
+                i.fa-solid.fa-chevron-down
+            div.language__dropdown.dropdown
+                .item 
+                    span Tiếng Việt 
         div.header__nav__item
             button.button--dropdown(onclick="toogleSearch(this)")
                 i.fa-solid.fa-magnifying-glass
-            div.search__dropdown
+            div.search__dropdown.dropdown
                 form(action="#", method="post") 
-                    input#searchHeader(type="search", name="searchHeader")
+                    input#searchHeader(type="search", name="searchHeader", placeholder="Search this site")
                     button.search__btn search
     video.video-intro(style="width: 100%" autoplay muted)
         source(src="./assets/vietnam.mp4" type="video/mp4")

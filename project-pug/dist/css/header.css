@@ -1,42 +1,250 @@
+.header .button--dropdown, .header__nav button.header__nav__item {
+  border: none;
+  background: none;
+  color: gray;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.5s ease-in;
+}
+.header .button--dropdown:hover, .header__nav button.header__nav__item:hover {
+  background-color: #ebebeb;
+  color: #a5190e;
+}
+
+.header .places__dropdown.dropdown .places__nav .place__regions .place__regions__list .place__regions__item:hover .name, .header .live-fully__list .live-fully__item:hover a {
+  text-decoration-line: underline;
+  text-decoration-color: #a5190e;
+}
+
+.dropdown {
+  z-index: 2;
+}
+
 .header {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  height: 116px;
 }
 .header__nav {
   padding-left: 40px;
   padding-right: 40px;
   width: 100%;
   display: flex;
+  white-space: nowrap;
   height: 116px;
 }
-.header__nav__item {
-  border: none;
-  background: none;
-  color: gray;
-  font-size: 14px;
-  font-weight: 700;
-  padding-left: 21px;
-  padding-right: 21px;
-  transition: background-color 0.5s ease-in;
-}
-.header__nav__item:hover {
-  background-color: #ebebeb;
-  color: #a5190e;
-}
-.header .logo {
+.header__nav .logo {
   position: relative;
+  z-index: 2;
 }
-.header .logo .logo-main {
+.header__nav .logo .logo-main {
   position: absolute;
   top: 0;
   left: 0;
 }
-.header .logo .logo--flex {
+.header__nav .logo .logo--flex {
   position: absolute;
   top: 100%;
   left: 0;
 }
+.header__nav .logo:hover {
+  background-color: none;
+}
+.header__nav button.header__nav__item {
+  padding-left: 21px;
+  padding-right: 21px;
+}
+.header__nav div.header__nav__item {
+  padding-left: 21px;
+  padding-right: 21px;
+  width: 100%;
+  position: relative;
+}
+.header__nav div.header__nav__item:hover .dropdown {
+  display: block;
+}
+.header__nav div.header__nav__item:hover .places__dropdown.dropdown {
+  display: flex;
+}
+.header .button--dropdown {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  white-space: nowrap;
+}
+.header .dropdown {
+  position: absolute;
+  display: none;
+  top: calc(100% - 20px);
+  background-color: #ebebeb;
+  border-bottom: 4px solid #a5190e;
+}
+.header .live-fully__dropdown {
+  left: 0;
+  right: 0;
+}
+.header .live-fully__list {
+  padding: 0;
+}
+.header .live-fully__list .live-fully__item {
+  text-transform: capitalize;
+  padding: 8px 0 8px 21px;
+}
+.header .live-fully__list .live-fully__item a {
+  color: #252525;
+  text-decoration: none;
+}
+.header .places__dropdown.dropdown {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  right: 0;
+  background-color: #ebebeb;
+  height: 70vh;
+  display: none;
+  flex-direction: row;
+  padding: 40px 40px 40px 25px;
+}
+.header .places__dropdown.dropdown .places__nav {
+  display: flex;
+  flex-direction: row;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .title {
+  font-style: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #b2910e;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .picture {
+  cursor: pointer;
+  width: 170px;
+  height: 92px;
+  position: relative;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 170px;
+  height: 92px;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .picture .description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 34px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .picture .description .info {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  line-height: 34px;
+  padding-left: 15px;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .place__regions__list {
+  padding-left: 0;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .place__regions__list .place__regions__item {
+  color: #252525;
+  padding-top: 4px;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .place__regions__list .place__regions__item i {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+.header .places__dropdown.dropdown .places__nav .place__regions .place__regions__list .place__regions__item a.name {
+  color: #252525;
+  padding-left: 15px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+.header .places__dropdown.dropdown .place__regions__maps {
+  display: flex;
+  margin-left: 80px;
+  position: relative;
+}
+.header .places__dropdown.dropdown .place__regions__maps .all {
+  position: absolute;
+  top: 0;
+  width: 268px;
+  height: 366px;
+  left: 0;
+}
+.header .places__dropdown.dropdown .place__regions__maps .link {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.header .places__dropdown.dropdown .place__regions__maps .link:hover .des-location {
+  color: red;
+  border-bottom: 2px solid #a5190e;
+  transition: color 2s ease-in, text-shadow 1s ease;
+  text-shadow: 2px 2px 4px rgba(178, 145, 14, 0.8);
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__north {
+  position: absolute;
+  left: calc(24% - 8px);
+  top: -10px;
+  width: 156px;
+  height: 104px;
+  transition: all 0.8s ease;
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__north:hover {
+  background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-north-active.png) 50% no-repeat;
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__central {
+  position: absolute;
+  left: calc(30% + 34px);
+  top: 56px;
+  width: 150px;
+  height: 267px;
+  transition: all 0.8s ease;
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__central:hover {
+  background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-central-active.png) 50% no-repeat;
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__south {
+  position: absolute;
+  left: calc(30% + 26px);
+  top: 264px;
+  width: 115px;
+  height: 109px;
+  transition: all 0.8s ease;
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__south:hover {
+  background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-south-active.png) 50% no-repeat;
+}
+.header .places__dropdown.dropdown .place__regions__maps .des-location {
+  margin-left: 90%;
+  padding-left: 50%;
+  color: #252525;
+  text-transform: uppercase;
+  font-style: 0.8rem;
+  font-weight: 700;
+  border-bottom: 2px solid #000;
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__central .des-location {
+  margin-bottom: 30px;
+  margin-left: 80%;
+}
+.header .places__dropdown.dropdown .place__regions__maps .map__south .des-location {
+  margin-bottom: 30px;
+  margin-left: 92%;
+}
 .header .video-intro {
   margin-top: -20px;
+  z-index: 1;
 }

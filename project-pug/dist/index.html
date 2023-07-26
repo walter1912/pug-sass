@@ -5,26 +5,105 @@
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <body>
     <header class="header"> 
-      <nav class="header__nav d-flex align-items-end">
-        <button class="header__nav__item logo"><img class="logo--main" src="./assets/logo.jpg" alt="Vietnam Tourism" srcset="" width="152px" height="116px"><img class="logo--flex" src="./assets/logo-bgr.png" alt="Vietnam Tourism" srcset="" width="152px" height="116px"></button>
-        <button class="header__nav__item"> <span>Live fully in Vietnam </span></button>
-        <button class="header__nav__item"> <span>Places to go </span></button>
-        <button class="header__nav__item"> <span>Things to do </span></button>
-        <button class="header__nav__item"> <span>Plan your trip </span></button>
+      <nav class="header__nav">
+        <div class="logo"><img class="logo--main" src="./assets/logo.jpg" alt="Vietnam Tourism" srcset="" width="152px" height="116px"><img class="logo--flex" src="./assets/logo-bgr.png" alt="Vietnam Tourism" srcset="" width="152px" height="116px"></div>
+        <div class="header__nav__item">
+          <button class="button--dropdown"><span>Live fully in Vietnam </span></button>
+          <div class="live-fully__dropdown dropdown"> 
+            <ul class="live-fully__list"> 
+              <li class="live-fully__item"> <a href="http://">vietnam now </a></li>
+              <li class="live-fully__item"> <a href="http://">why not vietnam</a></li>
+              <li class="live-fully__item"> <a href="http://">my vietnam </a></li>
+              <li class="live-fully__item"> <a href="http://">virtual vietnam</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__nav__item"> 
+          <button class="button--dropdown"><span>Places to go </span></button>
+          <div class="places__dropdown dropdown">
+            <div class="places__nav"> 
+              <div class="place__regions northern"> 
+                <p class="title">Northern Vietnam</p>
+                <div class="picture"> <img src="./assets/hanoi-vietnam.jpg" alt="Hà nội" srcset="">
+                  <div class="description"> <span class="info">ha noi</span></div>
+                </div>
+                <ul class="place__regions__list">
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">ha giang</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">mai chau</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">ha long</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">ninh binh </a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">sapa</a></li>
+                </ul>
+              </div>
+              <div class="place__regions central"> 
+                <p class="title">central Vietnam</p>
+                <div class="picture"> <img src="./assets/danang.jpg" alt="Đà Nẵng" srcset="">
+                  <div class="description"> <span class="info">da nang</span></div>
+                </div>
+                <ul class="place__regions__list">
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">da lat</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">hue</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">hoi an</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">nha trang</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">phong nha</a></li>
+                </ul>
+              </div>
+              <div class="place__regions southern">
+                <p class="title">southern Vietnam</p>
+                <div class="picture"> <img src="./assets/hochiminh.jpg" alt="Thành Phố Hồ Chí Minh" srcset="">
+                  <div class="description"> <span class="info">ho chi minh city</span></div>
+                </div>
+                <ul class="place__regions__list">
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">con dao</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">binh thuan</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">chau doc</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">can tho</a></li>
+                  <li class="place__regions__item"><i class="fa-solid fa-angle-right"></i><a class="name" href="http://">phu quoc</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="place__regions__maps"> <img class="all" src="./assets/maps/flyout-map.png" alt="Vietnam" srcset="">
+              <div class="link map__north">                      
+                <div class="des-location">northern vietnam </div>
+              </div>
+              <div class="link map__central">
+                <div class="des-location">central vietnam </div>
+              </div>
+              <div class="link map__south">
+                <div class="des-location">southern vietnam</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__nav__item"> 
+          <button class="button--dropdown"><span>Things to do </span></button>
+        </div>
+        <div class="header__nav__item"> 
+          <button class="button--dropdown"><span>Plan your trip </span></button>
+        </div>
         <button class="header__nav__item"> <span>Green travel </span></button>
         <button class="header__nav__item"> <span>Travel offers </span></button>
         <button class="header__nav__item"> <span>EN </span><i class="fa-solid fa-chevron-down"></i></button>
-        <button class="header__nav__item"> <i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="header__nav__item" onclick="toogleSearch(this)">
+          <button class="button--dropdown"> <i class="fa-solid fa-magnifying-glass"></i></button>
+          <div class="search__dropdown">
+            <form action="#" method="post"> 
+              <input id="searchHeader" type="search" name="searchHeader">
+              <button class="search__btn">search</button>
+            </form>
+          </div>
+        </div>
       </nav>
-      <video style="width: 100%; height: auto;" autoplay muted>
+      <video class="video-intro" style="width: 100%" autoplay muted>
         <source src="./assets/vietnam.mp4" type="video/mp4">
       </video>
     </header>
     <p class="hello">hello Pug, you're a joke to me</p>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="./js/all.js"> </script>
   </body>
 </html>

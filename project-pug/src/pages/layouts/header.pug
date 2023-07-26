@@ -1,16 +1,108 @@
 header.header 
-    nav.header__nav.d-flex.align-items-end
-        button.header__nav__item.logo
+    nav.header__nav
+        div.logo
             img.logo--main(src="./assets/logo.jpg", alt="Vietnam Tourism", srcset="", width="152px", height="116px")    
             img.logo--flex(src="./assets/logo-bgr.png", alt="Vietnam Tourism", srcset="", width="152px", height="116px")    
-        button.header__nav__item 
-            span Live fully in Vietnam 
-        button.header__nav__item 
-            span Places to go 
-        button.header__nav__item 
-            span Things to do 
-        button.header__nav__item 
-            span Plan your trip 
+        div.header__nav__item
+            button.button--dropdown
+                span Live fully in Vietnam 
+            div.live-fully__dropdown.dropdown 
+                ul.live-fully__list 
+                    li.live-fully__item 
+                        a(href="http://") vietnam now 
+                    li.live-fully__item 
+                        a(href="http://") why not vietnam
+                    li.live-fully__item 
+                        a(href="http://") my vietnam 
+                    li.live-fully__item 
+                        a(href="http://") virtual vietnam
+        div.header__nav__item 
+            button.button--dropdown
+                span Places to go 
+            div.places__dropdown.dropdown
+                .places__nav 
+                    .place__regions.northern 
+                        p.title Northern Vietnam
+                        .picture 
+                            img(src="./assets/hanoi-vietnam.jpg", alt="Hà nội", srcset="") 
+                            .description 
+                                span.info ha noi
+                        ul.place__regions__list
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") ha giang
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") mai chau
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") ha long
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") ninh binh 
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") sapa
+                    .place__regions.central 
+                        p.title central Vietnam
+                        .picture 
+                            img(src="./assets/danang.jpg", alt="Đà Nẵng", srcset="") 
+                            .description 
+                                span.info da nang
+                        ul.place__regions__list
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") da lat
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") hue
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") hoi an
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") nha trang
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") phong nha
+                    .place__regions.southern
+                        p.title southern Vietnam
+                        .picture 
+                            img(src="./assets/hochiminh.jpg", alt="Thành Phố Hồ Chí Minh", srcset="") 
+                            .description 
+                                span.info ho chi minh city
+                        ul.place__regions__list
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") con dao
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") binh thuan
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") chau doc
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") can tho
+                            li.place__regions__item
+                                i.fa-solid.fa-angle-right
+                                a.name(href="http://") phu quoc
+                 
+                .place__regions__maps 
+                    img.all(src="./assets/maps/flyout-map.png", alt="Vietnam", srcset="")
+                    .link.map__north                       
+                        div.des-location northern vietnam 
+                    .link.map__central
+                        div.des-location central vietnam 
+                    .link.map__south
+                        div.des-location southern vietnam
+
+        div.header__nav__item 
+            button.button--dropdown
+                span Things to do 
+        div.header__nav__item 
+            button.button--dropdown
+                span Plan your trip 
         button.header__nav__item 
             span Green travel 
         button.header__nav__item 
@@ -18,7 +110,12 @@ header.header
         button.header__nav__item 
             span EN 
             i.fa-solid.fa-chevron-down
-        button.header__nav__item 
-            i.fa-solid.fa-magnifying-glass
-    video.video-intro(style="width: 100%; height: auto;" autoplay muted)
+        div.header__nav__item
+            button.button--dropdown(onclick="toogleSearch(this)")
+                i.fa-solid.fa-magnifying-glass
+            div.search__dropdown
+                form(action="#", method="post") 
+                    input#searchHeader(type="search", name="searchHeader")
+                    button.search__btn search
+    video.video-intro(style="width: 100%" autoplay muted)
         source(src="./assets/vietnam.mp4" type="video/mp4")

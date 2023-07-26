@@ -8,10 +8,29 @@
   box-sizing: border-box;
 }
 
-body {
+body, a, button {
   font-family: "VNFGotham", Helvetica, Arial, sans-serif; /* Sử dụng font chữ đã import */
 }
 
 button {
   cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: currentColor;
+}
+
+.hover--under-main:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #a5190e;
 }

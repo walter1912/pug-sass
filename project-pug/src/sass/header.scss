@@ -2,49 +2,270 @@
 
 @import "variable";
 
+$navHeight: 116px;
+
+%nav__button {
+  border: none;
+  background: none;
+  color: $gray;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.5s ease-in;
+  &:hover {
+    background-color: $hoverColor;
+    color: $mainColor;
+  }
+}
+%under--main {
+  text-decoration-line: underline;
+  text-decoration-color: $mainColor;
+}
+.dropdown {
+  z-index: 2;
+}
 .header {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  
+  height: $navHeight;
   &__nav {
     padding-left: 40px;
     padding-right: 40px;
     width: 100%;
     display: flex;
+    white-space: nowrap;
     height: 116px;
-    &__item {
-      border: none;
-      background: none;
-      color: $gray;
-      font-size: 14px;
-      font-weight: 700;
+
+    & .logo {
+      position: relative;
+      z-index: 2;
+      & .logo-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      & .logo--flex {
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+      &:hover {
+        background-color: none;
+      }
+    }
+
+    button.header__nav__item {
+      @extend %nav__button;
       padding-left: 21px;
       padding-right: 21px;
-      transition: background-color .5s ease-in;
-      &:hover {
-        background-color: $hoverColor;
-        color: $mainColor;
-        
+    }
+    div.header__nav__item {
+      padding-left: 21px;
+      padding-right: 21px;
+      width: 100%;
+      position: relative;
+
+      &:hover .dropdown {
+        display: block;
+      }
+      &:hover .places__dropdown.dropdown {
+        display: flex;
+      }
+    }
+  }
+  .button--dropdown {
+    @extend %nav__button;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    white-space: nowrap;
+  }
+  .dropdown {
+    position: absolute;
+    display: none;
+    top: calc(100% - 20px);
+    background-color: $hoverColor;
+    border-bottom: 4px solid $mainColor;
+  }
+  .live-fully__dropdown {
+    left: 0;
+    right: 0;
+  }
+  .live-fully__list {
+    padding: 0;
+    .live-fully__item {
+      text-transform: capitalize;
+      padding: 8px 0 8px 21px;
+      & a {
+        color: $textColor;
+        text-decoration: none;
+      }
+      &:hover a {
+        @extend %under--main;
       }
     }
   }
 
-  & .logo {
-    position: relative;
-    & .logo-main {
+  .places__dropdown.dropdown {
+    position: fixed;
+    top: calc($navHeight - 20px);
+    left: 0;
+    right: 0;
+    background-color: $hoverColor;
+    height: 70vh;
+
+    display: none;
+    flex-direction: row;
+    padding: 40px 40px 40px 25px;
+    .places__nav {
+      display: flex;
+      flex-direction: row;
+      .place__regions {
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+        .title {
+          font-style: 1.1rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $yellow;
+        }
+        .picture {
+          cursor: pointer;
+          width: 170px;
+          height: 92px;
+          position: relative;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 170px;
+            height: 92px;
+          }
+          .description {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 34px;
+            background-color: rgba($color: $black, $alpha: 0.5);
+            .info {
+              text-transform: uppercase;
+              color: $white;
+              font-weight: 700;
+              line-height: 34px;
+              padding-left: 15px;
+            }
+          }
+        }
+        .place__regions__list {
+          padding-left: 0;
+          .place__regions__item {
+            color: $textColor;
+            padding-top: 4px;
+            i {
+              font-size: 0.9rem;
+              opacity: 0.6;
+            }
+            a.name {
+              color: $textColor;
+              padding-left: 15px;
+              text-decoration: none;
+              letter-spacing: 0.5px;
+              text-transform: capitalize;
+            }
+            &:hover .name {
+              @extend %under--main;
+            }
+          }
+        }
+      }
+    }
+
+    .place__regions__maps {
+      display: flex;
+      margin-left: 80px;
+      position: relative;
+      .all {
         position: absolute;
         top: 0;
+        width: 268px;
+        height: 366px;
         left: 0;
-    }
-    & .logo--flex {
+      }
+      .link {
         position: absolute;
-        top: 100%;
-        left: 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover .des-location {
+          color: red;
+          border-bottom: 2px solid $mainColor;
+          transition: color 2s ease-in, text-shadow 1s ease;
+          text-shadow: 2px 2px 4px rgba($color: $yellow, $alpha: 0.8);
+          // transition: text-shadow 2s ease-in;
+        }
+      }
+      .map__north {
+        position: absolute;
+        left: calc(24% - 8px);
+        top: -10px;
+        width: 156px;
+        height: 104px;
+        transition: all .8s ease;
+        &:hover {
+          background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-north-active.png)
+            50% no-repeat;
+        }
+      }
+      .map__central {
+        position: absolute;
+        left: calc(30% + 34px);
+        top: 56px;
+        width: 150px;
+        height: 267px;
+        transition: all 0.8s ease;
+        &:hover {
+          background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-central-active.png)
+            50% no-repeat;
+        }
+      }
+      .map__south {
+        position: absolute;
+        left: calc(30% + 26px);
+        top: 264px;
+        width: 115px;
+        height: 109px;
+        transition: all .8s ease;
+        &:hover {
+          background: url(https://vietnam.travel/themes/custom/vietnamtourism/images/flyout-map-south-active.png)
+            50% no-repeat;
+        }
+      }
+      .des-location {
+        margin-left: 90%;
+        padding-left: 50%;
+        color: $textColor;
+        text-transform: uppercase;
+        font-style: 0.8rem;
+        font-weight: 700;
+        border-bottom: 2px solid $black;
+      }
+      .map__central .des-location {
+        margin-bottom: 30px;
+        margin-left: 80%;
+      }
+      .map__south .des-location {
+        margin-bottom: 30px;
+        margin-left: 92%;
+      }
     }
   }
-
   .video-intro {
     margin-top: -20px;
+    z-index: 1;
   }
 }

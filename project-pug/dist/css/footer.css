@@ -1,0 +1,77 @@
+.footer {
+  width: 100%;
+  padding: 40px 10px;
+}
+
+.footer__item .footer__item__title {
+  color: #b2910e;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__connection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.footer__connection .btn__icon {
+  margin: 10px 5px;
+}
+
+.btn--tiktok:hover i {
+  color: #964454;
+  border-color: #964454;
+}
+
+.btn--facebook:hover i {
+  color: #0470e5;
+  border-color: #0470e5;
+}
+
+.btn--youtube:hover i {
+  color: #ff3131;
+  border-color: #ff3131;
+}
+
+.btn--instagram:hover i {
+  color: #f60a60;
+  border-color: #f60a60;
+}
+
+.btn--twitter:hover i {
+  color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.btn__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: none;
+  transition: all 0.5s ease;
+}
+.btn__icon i {
+  font-size: 1.6rem;
+}
+
+.list__link {
+  padding-left: 0;
+}
+
+.link__item a {
+  color: #252525;
+  text-decoration: none;
+}
+
+#header_email {
+  height: 44px;
+  outline: none;
+  min-width: 300px;
+}
